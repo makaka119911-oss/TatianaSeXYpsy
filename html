@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сексолог Татьяна | Трансформация в мире чувственности</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/kastlefoto.jpg" alt="Логотип">
+                <span>Татьяна</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#trainings">Тренинги</a></li>
+                <li><a href="#events">Мероприятия</a></li>
+                <li><a href="#cabinet" id="cabinet-link">Личный кабинет</a></li>
+                <li><a href="#consultation">Консультации</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#contact" class="btn-nav">Записаться</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('images/sexTatiana1slaid.jpg');"></div>
+            <div class="slide" style="background-image: url('images/sexTatiana2slaid.jpg');"></div>
+            <div class="slide" style="background-image: url('images/sexTatiana3slaid.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Татьяна. Сексолог.</h1>
+            <p class="hero-subtitle">Твоя трансформация в мире чувственности начинается здесь</p>
+            <div class="hero-buttons">
+                <a href="#trainings" class="btn-primary">Выбрать тренинг</a>
+                <a href="#consultation" class="btn-secondary">Запись на консультацию</a>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Онлайн-тренинги -->
+    <section id="trainings" class="trainings">
+        <div class="container">
+            <h2 class="section-title">Онлайн-тренинги для глубокого познания себя</h2>
+            <p class="section-subtitle">Доступ от 6 до 12 месяцев в личном кабинете</p>
+            
+            <div class="trainings-grid">
+                <!-- Тренинг 1 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-lips"></i>
+                    </div>
+                    <h3>Оральное обольщение</h3>
+                    <p>Мастерство и искусство дарить незабываемые ощущения</p>
+                    <button class="btn-details" data-training="oral">Подробнее</button>
+                    <button class="btn-buy" data-training="oral">Купить доступ</button>
+                </div>
+
+                <!-- Тренинг 2 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Массаж Лингам</h3>
+                    <p>Древние техники для нового уровня близости</p>
+                    <button class="btn-details" data-training="lingam">Подробнее</button>
+                    <button class="btn-buy" data-training="lingam">Купить доступ</button>
+                </div>
+
+                <!-- Тренинг 3 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Анальное удовольствие</h3>
+                    <p>Безопасное открытие новых эрогенных зон</p>
+                    <button class="btn-details" data-training="anal">Подробнее</button>
+                    <button class="btn-buy" data-training="anal">Купить доступ</button>
+                </div>
+
+                <!-- Тренинг 4 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Секреты БДСМ практик</h3>
+                    <p>Безопасность, доверие и новые грани чувственности</p>
+                    <button class="btn-details" data-training="bdsm">Подробнее</button>
+                    <button class="btn-buy" data-training="bdsm">Купить доступ</button>
+                </div>
+
+                <!-- Тренинг 5 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Глубокое горло</h3>
+                    <p>Техники контроля и полного расслабления</p>
+                    <button class="btn-details" data-training="throat">Подробнее</button>
+                    <button class="btn-buy" data-training="throat">Купить доступ</button>
+                </div>
+
+                <!-- Тренинг 6 -->
+                <div class="training-card">
+                    <div class="training-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Эротический массаж</h3>
+                    <p>Искусство прикосновений и пробуждение тела</p>
+                    <button class="btn-details" data-training="massage">Подробнее</button>
+                    <button class="btn-buy" data-training="massage">Купить доступ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Мероприятия в замке -->
+    <section id="events" class="events">
+        <div class="events-bg" style="background-image: url('images/kastlefoto.jpg');"></div>
+        <div class="container">
+            <div class="events-content">
+                <h2 class="section-title">Эксклюзивные мероприятия в замке</h2>
+                <div class="events-list">
+                    <div class="events-column">
+                        <h3><i class="fas fa-crown"></i> Основные события:</h3>
+                        <ul>
+                            <li><i class="fas fa-glass-cheers"></i> Девичники</li>
+                            <li><i class="fas fa-birthday-cake"></i> Дни рождения</li>
+                            <li><i class="fas fa-users"></i> Встречи с подругами</li>
+                            <li><i class="fas fa-utensils"></i> Женские бранчи</li>
+                        </ul>
+                    </div>
+                    <div class="events-column">
+                        <h3><i class="fas fa-gem"></i> Активности:</h3>
+                        <ul>
+                            <li><i class="fas fa-camera"></i> Фотосессии</li>
+                            <li><i class="fas fa-music"></i> Мастер-классы</li>
+                            <li><i class="fas fa-drum"></i> Саунд-хилинг</li>
+                            <li><i class="fas fa-gamepad"></i> Трансформационные игры</li>
+                        </ul>
+                    </div>
+                    <div class="events-column">
+                        <h3><i class="fas fa-fire"></i> Специальные практики:</h3>
+                        <ul>
+                            <li><i class="fas fa-fire"></i> Массаж огнём</li>
+                            <li><i class="fas fa-drum"></i> Практика с бубном</li>
+                            <li><i class="fas fa-moon"></i> Женские круги</li>
+                            <li><i class="fas fa-seedling"></i> Церемонии у камина</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="btn-primary btn-events">Узнать расписание и забронировать</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Личный кабинет -->
+    <section id="cabinet" class="cabinet-preview">
+        <div class="container">
+            <div class="cabinet-content">
+                <div class="cabinet-icon">
+                    <i class="fas fa-lock-open"></i>
+                </div>
+                <h2>Личный кабинет</h2>
+                <p>После покупки тренинга вы получаете персональный доступ к материалам на <strong>6 или 12 месяцев</strong>. 
+                Все видеоуроки, инструкции и дополнительные материалы в одном месте. Отслеживайте свой прогресс и возвращайтесь 
+                к материалам в любое время.</p>
+                <div class="cabinet-login">
+                    <input type="text" id="login-code" placeholder="Введите код доступа">
+                    <button id="login-btn" class="btn-primary">Войти в кабинет</button>
+                </div>
+                <small>Код доступа вы получаете сразу после оплаты тренинга</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Личные консультации -->
+    <section id="consultation" class="consultation">
+        <div class="container">
+            <div class="consultation-wrapper">
+                <div class="consultation-image">
+                    <img src="images/photo_2026-01-28_03-08-13.jpg" alt="Татьяна - сексолог">
+                </div>
+                <div class="consultation-form">
+                    <h2>Личные консультации</h2>
+                    <p class="form-subtitle">Индивидуальный подход. Психологическое ведение. Полная конфиденциальность.</p>
+                    <form id="consultation-form">
+                        <input type="text" id="name" placeholder="Ваше имя" required>
+                        <input type="text" id="contact" placeholder="Ваш Telegram или телефон" required>
+                        <textarea id="message" placeholder="Опишите ваш запрос или вопрос..." rows="4"></textarea>
+                        <button type="submit" class="btn-primary">Отправить заявку</button>
+                        <p class="form-note">Татьяна свяжется с вами в Telegram в течение 24 часов</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Галерея</h2>
+            <div class="gallery-grid">
+                <!-- Фотографии будут добавлены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь со мной</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><i class="fas fa-comments"></i> Telegram для связи:</h3>
+                    <p>@sexolog_tatiana</p>
+                    <h3><i class="fas fa-envelope"></i> Email:</h3>
+                    <p>tatiana@sexolog.com</p>
+                    <h3><i class="fas fa-clock"></i> Время работы:</h3>
+                    <p>Пн-Пт: 10:00 - 20:00<br>Сб-Вс: 11:00 - 18:00</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <input type="text" placeholder="Ваше имя" required>
+                        <input type="email" placeholder="Ваш Email" required>
+                        <textarea placeholder="Ваше сообщение..." rows="5" required></textarea>
+                        <button type="submit" class="btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/kastlefoto.jpg" alt="Логотип">
+                    <span>Сексолог Татьяна</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#trainings">Тренинги</a>
+                    <a href="#events">Мероприятия</a>
+                    <a href="#consultation">Консультации</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="footer-copy">
+                    <p>© 2024 Сексолог Татьяна. Все права защищены.</p>
+                    <p>Конфиденциальность и уважение к каждому клиенту</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно покупки тренинга -->
+    <div id="buy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Выберите доступ к тренингу</h3>
+            <p id="training-name">Оральное обольщение</p>
+            <div class="pricing-options">
+                <div class="price-option">
+                    <h4>6 месяцев</h4>
+                    <p class="price">5 900 ₽</p>
+                    <ul>
+                        <li>Полный доступ к материалам</li>
+                        <li>Поддержка в чате</li>
+                        <li>3 онлайн-сессии</li>
+                    </ul>
+                    <button class="btn-primary buy-btn" data-months="6">Выбрать</button>
+                </div>
+                <div class="price-option featured">
+                    <div class="badge">Популярный</div>
+                    <h4>12 месяцев</h4>
+                    <p class="price">9 900 ₽</p>
+                    <ul>
+                        <li>Полный доступ к материалам</li>
+                        <li>Персональная поддержка</li>
+                        <li>6 онлайн-сессий</li>
+                        <li>Доступ к закрытому чату</li>
+                    </ul>
+                    <button class="btn-primary buy-btn" data-months="12">Выбрать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно личного кабинета -->
+    <div id="cabinet-modal" class="modal">
+        <div class="modal-content cabinet-modal">
+            <span class="close-modal">&times;</span>
+            <div id="cabinet-login-section">
+                <h3>Вход в личный кабинет</h3>
+                <input type="text" id="cabinet-code" placeholder="Введите код доступа">
+                <button id="cabinet-login-btn" class="btn-primary">Войти</button>
+                <p class="demo-note">Для демо-версии используйте код: <strong>DEMO2024</strong></p>
+            </div>
+            <div id="cabinet-content" style="display: none;">
+                <h3>Добро пожаловать!</h3>
+                <div class="user-info">
+                    <p>Доступ активен до: <span id="access-until">31.12.2024</span></p>
+                    <p>Осталось дней: <span id="days-left">234</span></p>
+                </div>
+                <div class="user-trainings">
+                    <h4>Ваши тренинги:</h4>
+                    <div class="trainings-list"></div>
+                </div>
+                <button id="logout-btn" class="btn-secondary">Выйти</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
