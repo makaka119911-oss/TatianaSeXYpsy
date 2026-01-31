@@ -1,608 +1,186 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #e91e63;
-    --secondary-color: #9c27b0;
-    --dark-color: #2c3e50;
-    --light-color: #f8f9fa;
-    --accent-color: #ff9800;
-    --text-color: #333;
-    --text-light: #666;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header Styles */
-.header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.logo h1 {
-    color: var(--primary-color);
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.logo p {
-    color: var(--secondary-color);
-    font-size: 14px;
-}
-
-.nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    color: var(--primary-color);
-}
-
-.login-btn {
-    background: var(--primary-color);
-    color: white !important;
-    padding: 8px 16px;
-    border-radius: 20px;
-    transition: background 0.3s;
-}
-
-.login-btn:hover {
-    background: var(--secondary-color);
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/sexTatiana1slaid.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-/* Section Styles */
-.section-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-    color: var(--dark-color);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: var(--primary-color);
-    margin: 10px auto;
-}
-
-/* About Section */
-.about {
-    padding: 80px 0;
-    background: white;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Trainings Section */
-.trainings {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-}
-
-.trainings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.training-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.training-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.training-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.training-card h3 {
-    padding: 15px;
-    color: var(--dark-color);
-}
-
-.training-card p {
-    padding: 0 15px;
-    color: var(--text-light);
-    margin-bottom: 10px;
-}
-
-.training-card .price {
-    display: block;
-    padding: 10px 15px;
-    background: var(--primary-color);
-    color: white;
-    font-weight: bold;
-}
-
-.training-card .btn-secondary {
-    display: block;
-    width: calc(100% - 30px);
-    margin: 10px 15px 15px;
-    padding: 10px;
-    text-align: center;
-    background: var(--secondary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.training-card .btn-secondary:hover {
-    background: var(--primary-color);
-}
-
-/* Services Section */
-.services {
-    padding: 80px 0;
-    background: white;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-}
-
-.service-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-card.featured {
-    background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
-    color: white;
-}
-
-.service-card i {
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: var(--primary-color);
-}
-
-.service-card.featured i {
-    color: white;
-}
-
-.service-card h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.service-card p {
-    color: var(--text-light);
-    font-size: 14px;
-}
-
-/* Gallery Section */
-.gallery {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.05);
-}
-
-/* Consultations Section */
-.consultations {
-    padding: 80px 0;
-    background: white;
-}
-
-.consultations-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.consultation-card {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
-}
-
-.consultation-card:hover {
-    border-color: var(--primary-color);
-}
-
-.consultation-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.consultation-card p {
-    color: var(--text-light);
-    margin-bottom: 20px;
-}
-
-.consultation-card .duration,
-.consultation-card .price {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.consultation-card .duration {
-    color: var(--secondary-color);
-}
-
-.consultation-card .price {
-    color: var(--primary-color);
-    font-size: 24px;
-}
-
-/* Contact Section */
-.contact {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.contact-info h3,
-.contact-form h3 {
-    margin-bottom: 20px;
-    color: var(--dark-color);
-}
-
-.contact-info p {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: var(--primary-color);
-    font-size: 20px;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-links a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px;
-    margin-right: 10px;
-    transition: background 0.3s;
-}
-
-.social-links a:hover {
-    background: var(--secondary-color);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-/* Footer */
-.footer {
-    background: var(--dark-color);
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-}
-
-/* Buttons */
-.btn-primary,
-.btn-secondary {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    background: var(--secondary-color);
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    color: var(--text-light);
-    transition: color 0.3s;
-}
-
-.close:hover {
-    color: var(--primary-color);
-}
-
-.modal h2 {
-    margin-bottom: 25px;
-    color: var(--dark-color);
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: var(--dark-color);
-    font-weight: 500;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.register-link {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.register-link a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Dashboard Styles */
-.dashboard-info h3 {
-    margin-bottom: 20px;
-    color: var(--dark-color);
-}
-
-.purchased-trainings,
-.access-info,
-.training-links {
-    margin-bottom: 25px;
-}
-
-.purchased-trainings ul {
-    list-style: none;
-}
-
-.purchased-trainings li {
-    padding: 10px;
-    background: #f8f9fa;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.access-info p {
-    font-size: 18px;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.training-links a {
-    display: block;
-    padding: 10px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background 0.3s;
-}
-
-.training-links a:hover {
-    background: var(--secondary-color);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav ul {
-        display: none;
-    }
+// Telegram Bot Configuration
+const botToken = '8402206062:AAEJim1GkriKqY_o1mOo0YWSWQDdw5Qy2h0';
+const chatId = '-1002313355102';
+
+// DOM Elements
+const loginModal = document.getElementById('login');
+const dashboardModal = document.getElementById('dashboard');
+const closeButtons = document.querySelectorAll('.close');
+const loginForm = document.getElementById('loginForm');
+const contactForm = document.getElementById('contactForm');
+const registerLink = document.getElementById('registerLink');
+const userNameSpan = document.getElementById('userName');
+const trainingList = document.getElementById('trainingList');
+const trainingLinks = document.getElementById('trainingLinks');
+const expiryDateSpan = document.getElementById('expiryDate');
+
+// Sample user data (in real app, this would come from backend)
+let currentUser = null;
+const sampleUserData = {
+    name: "Анна",
+    email: "anna@example.com",
+    trainings: [
+        { id: 1, name: "Оральное обольщение", accessUntil: "2026-12-31", link: "#" },
+        { id: 2, name: "Массаж лингам", accessUntil: "2026-12-31", link: "#" },
+        { id: 3, name: "Эротический массаж", accessUntil: "2027-06-30", link: "#" }
+    ]
+};
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    setupSmoothScrolling();
+});
+
+// Setup Event Listeners
+function setupEventListeners() {
+    // Login button
+    document.querySelector('.login-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        loginModal.style.display = 'block';
+    });
+
+    // Close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            loginModal.style.display = 'none';
+            dashboardModal.style.display = 'none';
+        });
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+        if (event.target === dashboardModal) {
+            dashboardModal.style.display = 'none';
+        }
+    });
+
+    // Login form submission
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleLogin();
+    });
+
+    // Contact form submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        handleContactForm();
+    });
+
+    // Register link
+    registerLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Регистрация временно недоступна. Пожалуйста, свяжитесь с администратором.');
+    });
+}
+
+// Handle Login
+function handleLogin() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     
-    .hero h2 {
-        font-size: 32px;
-    }
-    
-    .hero p {
-        font-size: 18px;
-    }
-    
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .services-grid,
-    .trainings-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .modal-content {
-        margin: 20% auto;
-        width: 90%;
+    // Simple validation (in real app, validate with backend)
+    if (email && password) {
+        // Simulate successful login
+        currentUser = sampleUserData;
+        showDashboard();
+        loginModal.style.display = 'none';
+    } else {
+        alert('Пожалуйста, заполните все поля');
     }
 }
 
-@media (max-width: 480px) {
-    .hero h2 {
-        font-size: 28px;
-    }
-    
-    .section-title {
-        font-size: 28px;
-    }
-    
-    .training-card .price {
-        font-size: 18px;
+// Show Dashboard
+function showDashboard() {
+    if (currentUser) {
+        userNameSpan.textContent = currentUser.name;
+        
+        // Populate training list
+        trainingList.innerHTML = '';
+        currentUser.trainings.forEach(training => {
+            const li = document.createElement('li');
+            li.textContent = `${training.name} - Доступ до ${training.accessUntil}`;
+            trainingList.appendChild(li);
+        });
+        
+        // Set expiry date (use the furthest date)
+        const latestDate = currentUser.trainings.reduce((latest, current) => 
+            current.accessUntil > latest ? current.accessUntil : latest, 
+            currentUser.trainings[0].accessUntil
+        );
+        expiryDateSpan.textContent = latestDate;
+        
+        // Populate training links
+        trainingLinks.innerHTML = '';
+        currentUser.trainings.forEach(training => {
+            const link = document.createElement('a');
+            link.href = training.link;
+            link.textContent = training.name;
+            link.target = '_blank';
+            trainingLinks.appendChild(link);
+        });
+        
+        dashboardModal.style.display = 'block';
     }
 }
+
+// Handle Contact Form
+function handleContactForm() {
+    const formData = new FormData(contactForm);
+    const name = formData.get('name') || contactForm.querySelector('input[type="text"]').value;
+    const email = formData.get('email') || contactForm.querySelector('input[type="email"]').value;
+    const message = formData.get('message') || contactForm.querySelector('textarea').value;
+    
+    // Send message to Telegram
+    sendToTelegram(name, email, message);
+    
+    alert('Ваше сообщение отправлено! Я свяжусь с вами в ближайшее время.');
+    contactForm.reset();
+}
+
+// Send message to Telegram
+function sendToTelegram(name, email, message) {
+    const text = `Новое сообщение от ${name}\nEmail: ${email}\n\n${message}`;
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: text,
+            parse_mode: 'HTML'
+        })
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error:', error));
+}
+
+// Smooth Scrolling
+function setupSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
+// Mobile Navigation (if needed)
+function setupMobileNav() {
+    // This would be implemented if we add a mobile menu toggle
+}
+
+// Initialize mobile navigation
+setupMobileNav();
