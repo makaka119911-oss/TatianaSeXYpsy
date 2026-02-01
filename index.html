@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна Солнечная | Сексолог-психолог</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Фавикон -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23e91e63%22/><path d=%22M30 50 Q50 30 70 50 T30 50%22 fill=%22none%22 stroke=%22white%22 stroke-width=%224%22/></svg>" type="image/svg+xml">
     <style>
         :root {
-            --primary-color: #e91e63;
-            --secondary-color: #9c27b0;
-            --accent-color: #ff9800;
-            --dark-bg: #0f0c29;
-            --dark-gradient: linear-gradient(19deg, #0f0c29 0%, #302b63 35%, #24243e 100%);
-            --card-bg: rgba(36, 36, 62, 0.85);
-            --text-primary: #ffffff;
-            --text-secondary: #e0e0ff;
-            --text-light: #b0b0d0;
-            --border-radius: 15px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --bs-primary: #e91e63;
+            --bs-secondary: #9c27b0;
+            --bs-dark: #0f0c29;
+            --bs-darker: #0a081a;
+            --bs-light: #f8f9fa;
+            --bs-body-bg: #0f0c29;
+            --bs-body-color: #e0e0ff;
+            --bs-card-bg: rgba(36, 36, 62, 0.85);
+            --bs-border-radius: 15px;
             --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
@@ -29,18 +29,45 @@
         }
         
         body {
-            font-family: 'Raleway', sans-serif;
-            background: var(--dark-gradient);
-            color: var(--text-primary);
+            font-family: 'Ubuntu', sans-serif;
+            background: linear-gradient(19deg, #0f0c29 0%, #302b63 35%, #24243e 100%);
+            color: var(--bs-body-color);
             line-height: 1.6;
             overflow-x: hidden;
-            background-attachment: fixed;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 10% 20%, rgba(233, 30, 99, 0.1) 0%, rgba(156, 39, 176, 0.05) 25%, transparent 60%),
+                        radial-gradient(circle at 90% 80%, rgba(156, 39, 176, 0.15) 0%, rgba(233, 30, 99, 0.05) 30%, transparent 70%);
+            z-index: -1;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Barlow', sans-serif;
             font-weight: 700;
             line-height: 1.2;
+            color: white;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--bs-primary);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: #ff4081;
         }
         
         .container {
@@ -62,6 +89,10 @@
             display: inline-block;
             left: 50%;
             transform: translateX(-50%);
+            background: linear-gradient(to right, #e91e63, #9c27b0, #673ab7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .section-title::after {
@@ -72,21 +103,21 @@
             transform: translateX(-50%);
             width: 70px;
             height: 4px;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             border-radius: 2px;
         }
         
         .section-subtitle {
             text-align: center;
             font-size: 1.25rem;
-            color: var(--text-secondary);
+            color: var(--bs-body-color);
             max-width: 700px;
             margin: 0 auto 60px;
         }
         
         .btn {
             display: inline-block;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
             padding: 14px 35px;
             border-radius: 50px;
@@ -95,11 +126,12 @@
             font-size: 1.1rem;
             letter-spacing: 1px;
             transition: var(--transition);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--bs-primary);
             position: relative;
             overflow: hidden;
             z-index: 1;
             cursor: pointer;
+            font-family: 'Ubuntu', sans-serif;
         }
         
         .btn::before {
@@ -109,7 +141,7 @@
             left: 0;
             width: 0;
             height: 100%;
-            background: var(--secondary-color);
+            background: var(--bs-secondary);
             z-index: -1;
             transition: var(--transition);
         }
@@ -125,76 +157,120 @@
         
         .btn-secondary {
             background: transparent;
-            border-color: var(--secondary-color);
-            color: var(--secondary-color);
+            border-color: var(--bs-secondary);
+            color: var(--bs-secondary);
         }
         
         .btn-secondary::before {
-            background: var(--secondary-color);
+            background: var(--bs-secondary);
         }
         
-        .btn-large {
+        .btn-lg {
             padding: 18px 50px;
             font-size: 1.3rem;
         }
         
-        /* Header & Navigation */
-        header {
+        /* Прелоадер */
+        #spinner {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: var(--transition);
-            background: rgba(15, 12, 41, 0.95);
+            height: 100%;
+            background: var(--bs-body-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
         }
         
-        header.scrolled {
-            background: rgba(15, 12, 41, 0.98);
+        #spinner.show {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+        }
+        
+        .spinner-content {
+            text-align: center;
+        }
+        
+        .spinner-icon {
+            width: 80px;
+            height: 80px;
+            border: 5px solid rgba(233, 30, 99, 0.2);
+            border-top-color: var(--bs-primary);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .spinner-text {
+            font-family: 'Barlow', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--bs-primary), var(--bs-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+        }
+        
+        /* Header & Navigation */
+        .sticky-top {
+            background: rgba(15, 12, 41, 0.95);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             padding: 10px 0;
+            transition: var(--transition);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
         
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 0;
         }
         
-        .logo {
-            font-family: 'Playfair Display', serif;
+        .navbar-brand {
+            font-family: 'Barlow', sans-serif;
             font-size: 2.2rem;
             font-weight: 700;
             color: white;
-            text-decoration: none;
             display: flex;
             align-items: center;
         }
         
-        .logo span {
-            color: var(--primary-color);
-            margin-left: 5px;
-        }
-        
-        .logo-icon {
+        .navbar-brand i {
             margin-right: 10px;
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
         
-        .nav-links {
+        .navbar-brand span {
+            color: var(--bs-primary);
+        }
+        
+        .navbar-nav {
             display: flex;
             list-style: none;
         }
         
-        .nav-links li {
+        .nav-item {
             margin-left: 35px;
         }
         
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
+        .nav-link {
+            color: var(--bs-body-color);
             font-weight: 500;
             font-size: 1.05rem;
             position: relative;
@@ -202,24 +278,24 @@
             transition: var(--transition);
         }
         
-        .nav-links a:hover, 
-        .nav-links a.active {
-            color: var(--primary-color);
+        .nav-link:hover, 
+        .nav-link.active {
+            color: var(--bs-primary);
         }
         
-        .nav-links a::after {
+        .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             transition: var(--transition);
         }
         
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
         }
         
@@ -234,84 +310,66 @@
         
         .login-btn {
             background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            border: 2px solid var(--bs-primary);
+            color: var(--bs-primary);
             margin-left: 20px;
             padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
         }
         
         .login-btn:hover {
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
         }
         
-        /* Hero Section with Slider */
-        .hero {
-            height: 100vh;
+        /* Hero Section */
+        .hero-header {
             position: relative;
+            margin-top: -100px;
+            padding-top: 150px;
             overflow: hidden;
-            margin-top: 80px;
-        }
-        
-        .hero-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
+            background: rgba(216, 19, 36, 0.9);
+            background: linear-gradient(rgba(15, 12, 41, 0.85), rgba(48, 43, 99, 0.9)), url('https://images.unsplash.com/photo-1548744845-4864ab85e2a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
-        .slide.active {
-            opacity: 1;
-        }
-        
-        .slide:nth-child(1) {
-            background-image: url('images/sexTatiana1slaid.jpg');
-        }
-        
-        .slide:nth-child(2) {
-            background-image: url('images/sexTatiana2slaid.jpg');
-        }
-        
-        .slide:nth-child(3) {
-            background-image: url('images/sexTatiana3slaid.jpg');
-        }
-        
-        .hero-overlay {
+        .hero-header::before {
             position: absolute;
-            top: 0;
-            left: 0;
+            content: "";
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(15, 12, 41, 0.85), rgba(48, 43, 99, 0.9));
-            z-index: 2;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle, rgba(233,30,99,0.2) 0%, rgba(156,39,176,0.1) 70%, transparent 100%);
+            animation: animateUpDown 8s ease infinite;
+            z-index: -1;
+        }
+        
+        @keyframes animateUpDown {
+            0% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-15px) translateX(15px); }
+            50% { transform: translateY(0px) translateX(30px); }
+            75% { transform: translateY(15px) translateX(15px); }
+            100% { transform: translateY(0px) translateX(0px); }
         }
         
         .hero-content {
-            position: relative;
-            z-index: 3;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
             text-align: center;
-            padding: 0 20px;
+            padding-top: 60px;
+            position: relative;
+            z-index: 2;
         }
         
-        .hero-content h1 {
+        .hero h1 {
             font-size: 5rem;
             margin-bottom: 25px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -322,9 +380,9 @@
             line-height: 1.1;
         }
         
-        .hero-content p {
+        .hero p {
             font-size: 1.7rem;
-            color: var(--text-secondary);
+            color: var(--bs-body-color);
             margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
@@ -338,36 +396,7 @@
             margin-top: 30px;
         }
         
-        .slider-controls {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            display: flex;
-            gap: 15px;
-        }
-        
-        .slider-dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: 2px solid transparent;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .slider-dot.active {
-            background: var(--primary-color);
-            transform: scale(1.2);
-        }
-        
-        .slider-dot:hover {
-            background: var(--primary-color);
-        }
-        
-        /* Featured Section */
+        /* Featured Section (replaces countdown) */
         .featured {
             background: rgba(25, 20, 55, 0.85);
             position: relative;
@@ -375,22 +404,11 @@
             padding: 80px 0;
         }
         
-        .featured::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(233,30,99,0.15) 0%, rgba(156,39,176,0.05) 70%, transparent 100%);
-            z-index: 0;
-        }
-        
         .featured-title {
             text-align: center;
             font-size: 3.8rem;
             margin-bottom: 25px;
-            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            background: linear-gradient(to right, #ff9800, var(--bs-primary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -401,7 +419,7 @@
         .featured-subtitle {
             text-align: center;
             font-size: 1.5rem;
-            color: var(--text-secondary);
+            color: var(--bs-body-color);
             max-width: 750px;
             margin: 0 auto 50px;
             position: relative;
@@ -420,13 +438,13 @@
         }
         
         .featured-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
+            background: var(--bs-card-bg);
+            border-radius: var(--bs-border-radius);
             padding: 40px 30px;
             text-align: center;
             width: 100%;
             max-width: 450px;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: var(--transition);
             border: 1px solid rgba(233, 30, 99, 0.2);
             position: relative;
@@ -457,15 +475,11 @@
         .featured-card i {
             font-size: 5rem;
             margin-bottom: 25px;
-            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            background: linear-gradient(to right, #ff9800, var(--bs-primary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             display: block;
-        }
-        
-        .featured-card.fire i {
-            background: linear-gradient(to right, #ff9800, #e91e63);
         }
         
         .featured-card h3 {
@@ -476,7 +490,7 @@
         }
         
         .featured-card p {
-            color: var(--text-light);
+            color: var(--bs-body-color);
             font-size: 1.15rem;
             margin-bottom: 25px;
             position: relative;
@@ -512,12 +526,12 @@
             left: 0;
             width: 60%;
             height: 4px;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             border-radius: 2px;
         }
         
         .about-text p {
-            color: var(--text-light);
+            color: var(--bs-body-color);
             font-size: 1.15rem;
             margin: 20px 0;
             line-height: 1.8;
@@ -525,9 +539,9 @@
         
         .about-image {
             flex: 1;
-            border-radius: var(--border-radius);
+            border-radius: var(--bs-border-radius);
             overflow: hidden;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             position: relative;
             height: 500px;
         }
@@ -543,12 +557,66 @@
             transform: scale(1.05);
         }
         
-        /* Trainings Section */
-        .trainings {
+        /* Services Section */
+        .services {
             background: rgba(25, 22, 55, 0.92);
         }
         
-        .trainings-grid {
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 45px rgba(0, 0, 0, 0.2);
+            border-radius: 45px 3px 3px 3px;
+            transition: var(--transition);
+            background: var(--bs-card-bg);
+            border: 1px solid rgba(156, 39, 176, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(233, 30, 99, 0.4);
+        }
+        
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 45px 0;
+            background: rgba(233, 30, 99, 0.15);
+            margin: 0 auto 20px;
+        }
+        
+        .service-icon i {
+            font-size: 3.5rem;
+            background: linear-gradient(to right, var(--bs-primary), var(--bs-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .service-item h4 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .service-item p {
+            color: var(--bs-body-color);
+            padding: 0 20px 20px;
+            text-align: center;
+            line-height: 1.7;
+        }
+        
+        /* Trainings Section */
+        .trainings {
+            background: rgba(20, 18, 45, 0.95);
+        }
+        
+        .training-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 35px;
@@ -556,10 +624,10 @@
         }
         
         .training-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
+            background: var(--bs-card-bg);
+            border-radius: var(--bs-border-radius);
             overflow: hidden;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: var(--transition);
             position: relative;
             border: 1px solid rgba(156, 39, 176, 0.3);
@@ -597,7 +665,7 @@
         }
         
         .training-card p {
-            color: var(--text-light);
+            color: var(--bs-body-color);
             margin: 15px 0;
             line-height: 1.7;
         }
@@ -606,66 +674,18 @@
             display: block;
             font-size: 1.7rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             margin: 15px 0;
         }
         
         .training-access {
             display: inline-block;
             background: rgba(233, 30, 99, 0.15);
-            color: var(--primary-color);
+            color: var(--bs-primary);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.95rem;
             margin-top: 10px;
-        }
-        
-        /* Services Section */
-        .services {
-            background: rgba(20, 18, 45, 0.95);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .service-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 35px 25px;
-            text-align: center;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(103, 58, 183, 0.3);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
-            border-color: rgba(156, 39, 176, 0.5);
-        }
-        
-        .service-card i {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .service-card h3 {
-            font-size: 1.9rem;
-            margin: 15px 0;
-        }
-        
-        .service-card p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.7;
         }
         
         /* Gallery Section */
@@ -682,11 +702,11 @@
         }
         
         .gallery-item {
-            border-radius: var(--border-radius);
+            border-radius: var(--bs-border-radius);
             overflow: hidden;
             height: 250px;
             position: relative;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: var(--transition);
         }
         
@@ -741,11 +761,11 @@
         }
         
         .consultation-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
+            background: var(--bs-card-bg);
+            border-radius: var(--bs-border-radius);
             padding: 45px 35px;
             text-align: center;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -782,7 +802,7 @@
         }
         
         .consultation-card p {
-            color: var(--text-light);
+            color: var(--bs-body-color);
             margin: 20px 0;
             line-height: 1.7;
             position: relative;
@@ -792,7 +812,7 @@
         .consultation-duration {
             display: inline-block;
             background: rgba(233, 30, 99, 0.15);
-            color: var(--primary-color);
+            color: var(--bs-primary);
             padding: 5px 20px;
             border-radius: 30px;
             font-weight: 600;
@@ -804,7 +824,7 @@
         .consultation-price {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             margin: 20px 0;
             position: relative;
             z-index: 2;
@@ -847,7 +867,7 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             border-radius: 3px;
         }
         
@@ -863,7 +883,7 @@
         .contact-icon {
             min-width: 50px;
             height: 50px;
-            background: var(--primary-color);
+            background: var(--bs-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -883,14 +903,13 @@
         }
         
         .contact-text a {
-            color: var(--primary-color);
-            text-decoration: none;
+            color: var(--bs-primary);
             transition: var(--transition);
             font-weight: 500;
         }
         
         .contact-text a:hover {
-            color: var(--secondary-color);
+            color: var(--bs-secondary);
             text-decoration: underline;
         }
         
@@ -907,8 +926,8 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: var(--card-bg);
-            color: var(--primary-color);
+            background: var(--bs-card-bg);
+            color: var(--bs-primary);
             font-size: 1.8rem;
             transition: var(--transition);
             text-decoration: none;
@@ -917,7 +936,7 @@
         
         .social-link:hover {
             transform: translateY(-5px);
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
             box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
         }
@@ -947,10 +966,10 @@
         
         .contact-form {
             flex: 1;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
+            background: var(--bs-card-bg);
+            border-radius: var(--bs-border-radius);
             padding: 40px;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(156, 39, 176, 0.3);
         }
         
@@ -963,6 +982,7 @@
             margin-bottom: 8px;
             font-weight: 500;
             font-size: 1.05rem;
+            color: white;
         }
         
         .form-control {
@@ -978,7 +998,7 @@
         
         .form-control:focus {
             outline: none;
-            border-color: var(--primary-color);
+            border-color: var(--bs-primary);
             box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.25);
         }
         
@@ -999,28 +1019,91 @@
         }
         
         /* Footer */
-        footer {
+        .footer {
             background: rgba(10, 8, 25, 0.95);
-            padding: 40px 0 20px;
-            text-align: center;
+            padding: 60px 0 30px;
             border-top: 1px solid rgba(233, 30, 99, 0.3);
         }
         
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer h4 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--bs-primary);
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--bs-body-color);
+            transition: var(--transition);
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--bs-primary);
+            transform: translateX(5px);
+        }
+        
         .footer-logo {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Barlow', sans-serif;
             font-size: 2.5rem;
             margin-bottom: 20px;
             display: block;
         }
         
+        .footer-logo i {
+            margin-right: 10px;
+            color: var(--bs-primary);
+        }
+        
         .footer-logo span {
-            color: var(--primary-color);
+            color: var(--bs-primary);
+        }
+        
+        .footer p {
+            color: var(--bs-body-color);
+            margin: 15px 0;
+            line-height: 1.7;
         }
         
         .copyright {
-            color: var(--text-light);
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--bs-body-color);
             font-size: 1.05rem;
-            margin-top: 15px;
         }
         
         .age-notice {
@@ -1030,8 +1113,35 @@
             border-radius: 30px;
             margin-top: 10px;
             font-size: 0.95rem;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             border: 1px solid rgba(233, 30, 99, 0.3);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            display: none;
+            right: 45px;
+            bottom: 45px;
+            width: 50px;
+            height: 50px;
+            background: var(--bs-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 99;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .back-to-top:hover {
+            background: var(--bs-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
         
         /* Modals */
@@ -1056,7 +1166,7 @@
         }
         
         .modal-content {
-            background: var(--card-bg);
+            background: var(--bs-card-bg);
             border-radius: 25px;
             width: 90%;
             max-width: 600px;
@@ -1080,7 +1190,7 @@
             top: 25px;
             right: 25px;
             font-size: 2.5rem;
-            color: var(--text-light);
+            color: var(--bs-body-color);
             background: none;
             border: none;
             cursor: pointer;
@@ -1095,7 +1205,7 @@
         }
         
         .close-modal:hover {
-            color: var(--primary-color);
+            color: var(--bs-primary);
             background: rgba(233, 30, 99, 0.1);
         }
         
@@ -1111,7 +1221,7 @@
         }
         
         .modal-header p {
-            color: var(--text-light);
+            color: var(--bs-body-color);
             font-size: 1.2rem;
         }
         
@@ -1129,7 +1239,7 @@
             font-size: 2.5rem;
             margin-bottom: 30px;
             text-align: center;
-            color: var(--primary-color);
+            color: var(--bs-primary);
         }
         
         .dashboard-section {
@@ -1150,7 +1260,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: var(--secondary-color);
+            color: var(--bs-secondary);
         }
         
         .training-list {
@@ -1181,7 +1291,7 @@
         }
         
         .training-expiry {
-            background: var(--primary-color);
+            background: var(--bs-primary);
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
@@ -1199,7 +1309,7 @@
         .training-link {
             display: block;
             padding: 14px 20px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(to right, var(--bs-primary), var(--bs-secondary));
             color: white;
             text-decoration: none;
             border-radius: 15px;
@@ -1221,7 +1331,7 @@
             text-align: center;
             font-size: 1.4rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--bs-primary);
             border: 1px solid rgba(233, 30, 99, 0.3);
         }
         
@@ -1232,7 +1342,7 @@
         }
         
         .register-link a {
-            color: var(--primary-color);
+            color: var(--bs-primary);
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
@@ -1242,23 +1352,13 @@
             text-decoration: underline;
         }
         
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
         /* Responsive Design */
         @media (max-width: 992px) {
             .section-title {
                 font-size: 3rem;
             }
             
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 4.2rem;
             }
             
@@ -1271,14 +1371,6 @@
                 width: 100%;
                 height: 450px;
             }
-            
-            .featured-title {
-                font-size: 3.2rem;
-            }
-            
-            .featured-subtitle {
-                font-size: 1.35rem;
-            }
         }
         
         @media (max-width: 768px) {
@@ -1286,7 +1378,7 @@
                 display: block;
             }
             
-            .nav-links {
+            .navbar-nav {
                 position: fixed;
                 top: 80px;
                 right: -100%;
@@ -1301,19 +1393,19 @@
                 border-left: 1px solid rgba(233, 30, 99, 0.3);
             }
             
-            .nav-links.active {
+            .navbar-nav.active {
                 right: 0;
             }
             
-            .nav-links li {
+            .nav-item {
                 margin: 15px 0;
             }
             
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 3.5rem;
             }
             
-            .hero-content p {
+            .hero p {
                 font-size: 1.45rem;
             }
             
@@ -1325,6 +1417,14 @@
             .hero-buttons .btn {
                 width: 100%;
                 max-width: 350px;
+            }
+            
+            .featured-title {
+                font-size: 3.2rem;
+            }
+            
+            .featured-subtitle {
+                font-size: 1.35rem;
             }
             
             section {
@@ -1340,13 +1440,12 @@
                 font-size: 2.5rem;
             }
             
-            .slider-controls {
-                bottom: 20px;
-            }
-            
-            .hero {
-                margin-top: 60px;
-                height: 90vh;
+            .back-to-top {
+                right: 25px;
+                bottom: 25px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
             }
         }
         
@@ -1355,11 +1454,11 @@
                 font-size: 2.7rem;
             }
             
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2.9rem;
             }
             
-            .hero-content p {
+            .hero p {
                 font-size: 1.3rem;
             }
             
@@ -1368,7 +1467,7 @@
                 font-size: 1rem;
             }
             
-            .btn-large {
+            .btn-lg {
                 padding: 15px 35px;
                 font-size: 1.15rem;
             }
@@ -1401,83 +1500,77 @@
                 height: 40px;
             }
             
-            .slider-dot {
-                width: 12px;
-                height: 12px;
+            .spinner-icon {
+                width: 60px;
+                height: 60px;
+                border-width: 4px;
             }
             
-            .hero {
-                height: 85vh;
+            .spinner-text {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Прелоадер -->
+    <div id="spinner" class="show">
+        <div class="spinner-content">
+            <div class="spinner-icon"></div>
+            <div class="spinner-text">ТАТЬЯНА СОЛНЕЧНАЯ</div>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header id="header">
+    <div class="sticky-top">
         <div class="container navbar">
-            <a href="#" class="logo">
-                <i class="fas fa-moon logo-icon"></i>
+            <a href="#" class="navbar-brand">
+                <i class="fas fa-moon"></i>
                 Татьяна <span>Солнечная</span>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="#about" class="active">О себе</a></li>
-                <li><a href="#trainings">Тренинги</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#consultations">Консультации</a></li>
-                <li><a href="#contact">Контакты</a></li>
-                <li><a href="#" class="login-btn" id="loginBtn">Личный кабинет</a></li>
+            <ul class="navbar-nav" id="navMenu">
+                <li class="nav-item"><a href="#about" class="nav-link active">О себе</a></li>
+                <li class="nav-item"><a href="#trainings" class="nav-link">Тренинги</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Услуги</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li class="nav-item"><a href="#consultations" class="nav-link">Консультации</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Контакты</a></li>
+                <li class="nav-item"><a href="#" class="login-btn" id="loginBtn">Личный кабинет</a></li>
             </ul>
         </div>
-    </header>
+    </div>
 
-    <!-- Hero Section with Slider -->
-    <section class="hero">
-        <div class="hero-slider" id="heroSlider">
-            <div class="slide active"></div>
-            <div class="slide"></div>
-            <div class="slide"></div>
-        </div>
-        <div class="hero-overlay"></div>
+    <!-- Hero Section -->
+    <div class="hero-header" id="home">
         <div class="container hero-content">
-            <div>
-                <h1>Раскройте свою сексуальность</h1>
-                <p>Профессиональные тренинги и практики для женщин, которые хотят обрести гармонию, уверенность и яркую сексуальную жизнь</p>
-                <div class="hero-buttons">
-                    <a href="#featured" class="btn btn-large">Популярные практики</a>
-                    <a href="#trainings" class="btn btn-large btn-secondary">Все тренинги</a>
-                </div>
+            <h1>Раскройте свою сексуальность</h1>
+            <p>Профессиональные тренинги и практики для женщин, которые хотят обрести гармонию, уверенность и яркую сексуальную жизнь</p>
+            <div class="hero-buttons">
+                <a href="#featured" class="btn btn-lg">Популярные практики</a>
+                <a href="#trainings" class="btn btn-lg btn-secondary">Все тренинги</a>
             </div>
         </div>
-        <div class="slider-controls" id="sliderControls">
-            <div class="slider-dot active" data-slide="0"></div>
-            <div class="slider-dot" data-slide="1"></div>
-            <div class="slider-dot" data-slide="2"></div>
-        </div>
-    </section>
+    </div>
 
     <!-- Featured Section -->
     <section class="featured" id="featured">
-        <div class="container">
-            <h2 class="featured-title">Популярные практики</h2>
-            <p class="featured-subtitle">Уникальные авторские методики, которые помогут вам раскрыть свою женскую силу и сексуальную энергию</p>
-            <div class="featured-cards">
-                <div class="featured-card fire">
-                    <i class="fas fa-fire"></i>
-                    <h3>Массаж огнём</h3>
-                    <p>Уникальная практика с использованием огня для трансформации энергии, пробуждения чувственности и освобождения от внутренних блоков</p>
-                    <a href="#contact" class="btn">Записаться</a>
-                </div>
-                <div class="featured-card fire">
-                    <i class="fas fa-drum"></i>
-                    <h3>Практика с бубном и огнём</h3>
-                    <p>Шаманские техники для пробуждения женской силы, глубокой трансформации и выхода на новый уровень осознанности</p>
-                    <a href="#contact" class="btn">Записаться</a>
-                </div>
+        <h2 class="featured-title">Популярные практики</h2>
+        <p class="featured-subtitle">Уникальные авторские методики, которые помогут вам раскрыть свою женскую силу и сексуальную энергию</p>
+        <div class="featured-cards">
+            <div class="featured-card">
+                <i class="fas fa-fire"></i>
+                <h3>Массаж огнём</h3>
+                <p>Уникальная практика с использованием огня для трансформации энергии, пробуждения чувственности и освобождения от внутренних блоков</p>
+                <a href="#contact" class="btn">Записаться</a>
+            </div>
+            <div class="featured-card">
+                <i class="fas fa-drum"></i>
+                <h3>Практика с бубном и огнём</h3>
+                <p>Шаманские техники для пробуждения женской силы, глубокой трансформации и выхода на новый уровень осознанности</p>
+                <a href="#contact" class="btn">Записаться</a>
             </div>
         </div>
     </section>
@@ -1496,7 +1589,7 @@
                     <p>Я верю, что сексуальность — это неотъемлемая часть нашей личности, и ее раскрытие ведет к глубоким трансформациям во всех сферах жизни.</p>
                 </div>
                 <div class="about-image">
-                    <img src="images/sexTatiana2slaid.jpg" alt="Татьяна Солнечная">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Татьяна Солнечная">
                 </div>
             </div>
         </div>
@@ -1507,10 +1600,10 @@
         <div class="container">
             <h2 class="section-title">Онлайн Тренинги</h2>
             <p class="section-subtitle">Полный доступ ко всем материалам тренинга на 6-12 месяцев в зависимости от выбранного пакета. Все занятия доступны в записи в вашем личном кабинете.</p>
-            <div class="trainings-grid">
+            <div class="training-grid">
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/sexTatiana1slaid.jpg" alt="Оральное обольщение">
+                        <img src="https://images.unsplash.com/photo-1548744845-4864ab85e2a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Оральное обольщение">
                     </div>
                     <div class="training-content">
                         <h3>Оральное обольщение</h3>
@@ -1521,7 +1614,7 @@
                 </div>
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/sexTatiana3slaid.jpg" alt="Массаж лингам">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Массаж лингам">
                     </div>
                     <div class="training-content">
                         <h3>Массаж лингам</h3>
@@ -1532,7 +1625,7 @@
                 </div>
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/gallery1.jpg" alt="Анальное удовольствие">
+                        <img src="https://images.unsplash.com/photo-1514988381413-5ec68a439f6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Анальное удовольствие">
                     </div>
                     <div class="training-content">
                         <h3>Анальное удовольствие</h3>
@@ -1543,7 +1636,7 @@
                 </div>
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/gallery2.jpg" alt="Секреты БДСМ">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Секреты БДСМ">
                     </div>
                     <div class="training-content">
                         <h3>Секреты БДСМ практик</h3>
@@ -1554,7 +1647,7 @@
                 </div>
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/gallery3.jpg" alt="Глубокое горло">
+                        <img src="https://images.unsplash.com/photo-1548744845-4864ab85e2a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Глубокое горло">
                     </div>
                     <div class="training-content">
                         <h3>Глубокое горло</h3>
@@ -1565,7 +1658,7 @@
                 </div>
                 <div class="training-card">
                     <div class="training-img">
-                        <img src="images/gallery4.jpg" alt="Эротический массаж">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Эротический массаж">
                     </div>
                     <div class="training-content">
                         <h3>Эротический массаж</h3>
@@ -1583,46 +1676,78 @@
         <div class="container">
             <h2 class="section-title">Дополнительные Услуги</h2>
             <p class="section-subtitle">Оффлайн-мероприятия и практики для глубокого погружения в мир женской сексуальности и трансформации</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-castle"></i>
-                    <h3>Девишники в замке</h3>
-                    <p>Эксклюзивные мероприятия в атмосфере средневекового замка с авторскими практиками</p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-castle"></i>
+                        </div>
+                        <h4>Девишники в замке</h4>
+                        <p>Эксклюзивные мероприятия в атмосфере средневекового замка с авторскими практиками</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Женские бранчи</h3>
-                    <p>Тематические встречи с подругами в уютной атмосфере с психологическими практиками</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Женские бранчи</h4>
+                        <p>Тематические встречи с подругами в уютной атмосфере с психологическими практиками</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-birthday-cake"></i>
-                    <h3>Дни рождения</h3>
-                    <p>Специальные программы для празднования женского дня рождения с элементами трансформации</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                        <h4>Дни рождения</h4>
+                        <p>Специальные программы для празднования женского дня рождения с элементами трансформации</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-camera"></i>
-                    <h3>Фотосессии</h3>
-                    <p>Эротические фотосессии для раскрытия вашей красоты и уверенности в себе</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4>Фотосессии</h4>
+                        <p>Эротические фотосессии для раскрытия вашей красоты и уверенности в себе</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Саунд хилинг</h3>
-                    <p>Звуковое исцеление для гармонизации тела и души, снятия блоков и стресса</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h4>Саунд хилинг</h4>
+                        <p>Звуковое исцеление для гармонизации тела и души, снятия блоков и стресса</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-gamepad"></i>
-                    <h3>Трансформационные игры</h3>
-                    <p>Игровые практики для личностного роста и раскрытия сексуального потенциала</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h4>Трансформационные игры</h4>
+                        <p>Игровые практики для личностного роста и раскрытия сексуального потенциала</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-circle"></i>
-                    <h3>Женские круги</h3>
-                    <p>Ритуалы и практики в кругу единомышленниц для поддержки и обмена энергией</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <h4>Женские круги</h4>
+                        <p>Ритуалы и практики в кругу единомышленниц для поддержки и обмена энергией</p>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-champagne-glasses"></i>
-                    <h3>Встречи с подругами</h3>
-                    <p>Организация тематических вечеринок с авторскими практиками для близких подруг</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-champagne-glasses"></i>
+                        </div>
+                        <h4>Встречи с подругами</h4>
+                        <p>Организация тематических вечеринок с авторскими практиками для близких подруг</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1635,28 +1760,28 @@
             <p class="section-subtitle">Моменты трансформации и радости на наших практиках и мероприятиях</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/gallery1.jpg" alt="Практика">
+                    <img src="https://images.unsplash.com/photo-1548744845-4864ab85e2a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Практика">
                     <div class="gallery-overlay">Тренинг</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/kastlefoto.jpg" alt="Замок">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Замок">
                     <div class="gallery-overlay">Девишник в замке</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery2.jpg" alt="Мастер-класс">
+                    <img src="https://images.unsplash.com/photo-1514988381413-5ec68a439f6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Мастер-класс">
                     <div class="gallery-overlay">Мастер-класс</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery3.jpg" alt="Встреча">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Встреча">
                     <div class="gallery-overlay">Женский круг</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery4.jpg" alt="Практика">
+                    <img src="https://images.unsplash.com/photo-1548744845-4864ab85e2a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Практика">
                     <div class="gallery-overlay">Саунд-хилинг</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery5.jpg" alt="Замок">
-                    <div class="gallery-overlay">Трансформация</div>
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Замок">
+                    <div class="gallery-overlay">Замок</div>
                 </div>
             </div>
         </div>
@@ -1744,7 +1869,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3 style="text-align: center; margin-bottom: 30px;">Отправить сообщение</h3>
+                    <h3 style="text-align: center; margin-bottom: 30px; color: white;">Отправить сообщение</h3>
                     <div class="success-message" id="formSuccessMessage">
                         Ваше сообщение успешно отправлено! Я свяжусь с вами в ближайшее время.
                     </div>
@@ -1766,7 +1891,7 @@
                                 <label for="message">Сообщение</label>
                                 <textarea id="message" class="form-control" required placeholder="Напишите ваше сообщение"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-large" id="submitBtn">Отправить сообщение</button>
+                            <button type="submit" class="btn btn-lg" id="submitBtn">Отправить сообщение</button>
                         </div>
                     </form>
                 </div>
@@ -1775,15 +1900,47 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <span class="footer-logo">
-                Татьяна <span>Солнечная</span>
-            </span>
-            <p class="copyright">&copy; 2025 Татьяна Солнечная. Все права защищены.</p>
-            <p class="age-notice">Сайт предназначен для лиц старше 18 лет</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-moon"></i>
+                        Татьяна <span>Солнечная</span>
+                    </a>
+                    <p>Сертифицированный сексолог-психолог с 10-летним опытом работы в области женской сексуальности и психологического благополучия.</p>
+                    <p>Моя миссия — помочь женщинам раскрыть свою сексуальную энергию и обрести гармонию.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">О себе</a></li>
+                        <li><a href="#trainings">Тренинги</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#consultations">Консультации</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> hello@tatiana-solnechnaya.ru</li>
+                        <li><i class="fas fa-phone"></i> +7 (900) 123-45-67</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, Россия</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Татьяна Солнечная. Все права защищены.</p>
+                <p class="age-notice">Сайт предназначен для лиц старше 18 лет</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Login Modal -->
     <div class="modal" id="loginModal">
@@ -1804,7 +1961,7 @@
                             <label for="loginPassword">Пароль</label>
                             <input type="password" id="loginPassword" class="form-control" required placeholder="Введите ваш пароль">
                         </div>
-                        <button type="submit" class="btn btn-large">Войти</button>
+                        <button type="submit" class="btn btn-lg">Войти</button>
                         <div class="register-link">
                             Нет аккаунта? <a href="#" id="openRegisterLink">Регистрация</a>
                         </div>
@@ -1831,15 +1988,15 @@
                         <ul class="training-list">
                             <li class="training-item">
                                 <span class="training-name">Оральное обольщение</span>
-                                <span class="training-expiry">До 15.08.2025</span>
+                                <span class="training-expiry">До 15.08.2026</span>
                             </li>
                             <li class="training-item">
                                 <span class="training-name">Массаж лингам</span>
-                                <span class="training-expiry">До 30.12.2025</span>
+                                <span class="training-expiry">До 30.12.2026</span>
                             </li>
                             <li class="training-item">
                                 <span class="training-name">Эротический массаж</span>
-                                <span class="training-expiry">До 15.08.2025</span>
+                                <span class="training-expiry">До 15.08.2026</span>
                             </li>
                         </ul>
                     </div>
@@ -1847,7 +2004,7 @@
                     <div class="dashboard-section">
                         <h4><i class="fas fa-key"></i> Доступ к материалам</h4>
                         <div class="access-info">
-                            Активный доступ до: <strong>30 декабря 2025 г.</strong>
+                            Активный доступ до: <strong>30 декабря 2026 г.</strong>
                         </div>
                     </div>
                     
@@ -1866,12 +2023,21 @@
     </div>
 
     <script>
+        // Прелоадер
+        (function() {
+            setTimeout(function() {
+                const spinner = document.getElementById('spinner');
+                if (spinner) {
+                    spinner.classList.remove('show');
+                }
+            }, 1500);
+        })();
+        
         // Telegram Bot Configuration
         const botToken = '8402206062:AAEJim1GkriKqY_o1mOo0YWSWQDdw5Qy2h0';
         const chatId = '-1002313355102';
         
         // DOM Elements
-        const header = document.getElementById('header');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         const loginBtn = document.getElementById('loginBtn');
@@ -1885,72 +2051,25 @@
         const formSuccessMessage = document.getElementById('formSuccessMessage');
         const submitBtn = document.getElementById('submitBtn');
         const userNameSpan = document.getElementById('userName');
-        
-        // Slider Elements
-        const heroSlider = document.getElementById('heroSlider');
-        const slides = heroSlider.querySelectorAll('.slide');
-        const sliderDots = document.querySelectorAll('.slider-dot');
-        let currentSlide = 0;
-        const slideInterval = 5000; // 5 seconds
-        
-        // Slider Functionality
-        function showSlide(index) {
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            sliderDots.forEach(dot => dot.classList.remove('active'));
-            
-            // Show current slide
-            slides[index].classList.add('active');
-            sliderDots[index].classList.add('active');
-            
-            currentSlide = index;
-        }
-        
-        function nextSlide() {
-            let nextIndex = (currentSlide + 1) % slides.length;
-            showSlide(nextIndex);
-        }
-        
-        // Auto slide
-        let slideTimer = setInterval(nextSlide, slideInterval);
-        
-        // Pause on hover
-        heroSlider.addEventListener('mouseenter', () => clearInterval(slideTimer));
-        heroSlider.addEventListener('mouseleave', () => {
-            slideTimer = setInterval(nextSlide, slideInterval);
-        });
-        
-        // Dot controls
-        sliderDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                clearInterval(slideTimer);
-                showSlide(index);
-                slideTimer = setInterval(nextSlide, slideInterval);
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        const backToTopBtn = document.querySelector('.back-to-top');
         
         // Mobile Menu Toggle
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
         
         // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        document.querySelectorAll('.navbar-nav a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             });
         });
         
@@ -1966,14 +2085,20 @@
         }
         
         // Login Button
-        loginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openModal(loginModal);
-        });
+        if (loginBtn) {
+            loginBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(loginModal);
+            });
+        }
         
         // Close Modals
-        closeLoginModal.addEventListener('click', () => closeModal(loginModal));
-        closeDashboardModal.addEventListener('click', () => closeModal(dashboardModal));
+        if (closeLoginModal) {
+            closeLoginModal.addEventListener('click', () => closeModal(loginModal));
+        }
+        if (closeDashboardModal) {
+            closeDashboardModal.addEventListener('click', () => closeModal(dashboardModal));
+        }
         
         // Close modal when clicking outside
         window.addEventListener('click', (e) => {
@@ -1982,70 +2107,108 @@
         });
         
         // Login Form Submission
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Simple validation
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            if (email && password) {
-                // Close login modal
-                closeModal(loginModal);
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
                 
-                // Set user name in dashboard (first part of email)
-                const userName = email.split('@')[0];
-                userNameSpan.textContent = userName.charAt(0).toUpperCase() + userName.slice(1);
+                // Simple validation
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
                 
-                // Open dashboard
-                openModal(dashboardModal);
+                if (email && password) {
+                    // Close login modal
+                    closeModal(loginModal);
+                    
+                    // Set user name in dashboard (first part of email)
+                    const userName = email.split('@')[0];
+                    userNameSpan.textContent = userName.charAt(0).toUpperCase() + userName.slice(1);
+                    
+                    // Open dashboard
+                    openModal(dashboardModal);
+                    
+                    // Reset form
+                    loginForm.reset();
+                } else {
+                    alert('Пожалуйста, заполните все поля');
+                }
+            });
+        }
+        
+        // Register Link
+        if (openRegisterLink) {
+            openRegisterLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Регистрация временно недоступна. Пожалуйста, свяжитесь с администратором для создания аккаунта.');
+            });
+        }
+        
+        // Contact Form Submission
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
                 
-                // Reset form
-                loginForm.reset();
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value || 'Не указан';
+                const message = document.getElementById('message').value;
+                
+                // Create message for Telegram
+                const text = `Новая заявка с сайта Татьяны Солнечной!\n\nИмя: ${name}\nEmail: ${email}\nТелефон: ${phone}\n\nСообщение:\n${message}`;
+                
+                // Show loading state
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+                submitBtn.disabled = true;
+                
+                // Simulate successful submission (in real app, use fetch to Telegram API)
+                setTimeout(() => {
+                    // Show success message
+                    formSuccessMessage.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formSuccessMessage.style.display = 'none';
+                    }, 5000);
+                    
+                    // Reset button state
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            });
+        }
+        
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                backToTopBtn.style.display = 'flex';
             } else {
-                alert('Пожалуйста, заполните все поля');
+                backToTopBtn.style.display = 'none';
             }
         });
         
-        // Register Link
-        openRegisterLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Регистрация временно недоступна. Пожалуйста, свяжитесь с администратором для создания аккаунта.');
-        });
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                return false;
+            });
+        }
         
-        // Contact Form Submission
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value || 'Не указан';
-            const message = document.getElementById('message').value;
-            
-            // Create message for Telegram
-            const text = `Новая заявка с сайта Татьяны Солнечной!\n\nИмя: ${name}\nEmail: ${email}\nТелефон: ${phone}\n\nСообщение:\n${message}`;
-            
-            // Show loading state
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-            submitBtn.disabled = true;
-            
-            // Send to Telegram (simulated success for demo)
-            setTimeout(() => {
-                // Show success message
-                formSuccessMessage.style.display = 'block';
-                contactForm.reset();
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    formSuccessMessage.style.display = 'none';
-                }, 5000);
-                
-                // Reset button state
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
-            }, 1500);
+        // Sticky navbar
+        window.addEventListener('scroll', () => {
+            const stickyTop = document.querySelector('.sticky-top');
+            if (window.scrollY > 300) {
+                stickyTop.classList.add('bg-primary', 'shadow-sm');
+                stickyTop.style.top = '0px';
+            } else {
+                stickyTop.classList.remove('bg-primary', 'shadow-sm');
+                stickyTop.style.top = '-150px';
+            }
         });
         
         // Smooth Scrolling for Anchor Links
@@ -2096,7 +2259,7 @@
                 const sectionId = section.getAttribute('id');
                 
                 if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-links a').forEach(link => {
+                    document.querySelectorAll('.navbar-nav a').forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${sectionId}`) {
                             link.classList.add('active');
@@ -2105,9 +2268,8 @@
                 }
             });
         });
-        
-        // Initialize with header not scrolled
-        header.classList.remove('scrolled');
     </script>
 </body>
 </html>
+
+
